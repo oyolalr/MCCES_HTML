@@ -1,0 +1,1647 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DD Form 2983 - Recruit/Trainee Prohibited Activities Acknowledgment</title>
+  <style>
+    :root {
+      --border-color: #000000;
+      --bg-highlight: #f4f7fb;
+      --bg-highlight-hover: #e6eef8;
+      --primary-btn: #1a56db;
+      --danger-btn: #dc2626;
+      --secondary-btn: #4b5563;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      line-height: 1.25;
+      color: #000;
+      background-color: #e5e7eb;
+      margin: 0;
+      padding: 16px;
+    }
+
+    /* Action Toolbar */
+    .toolbar {
+      max-width: 850px;
+      margin: 0 auto 16px auto;
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-info {
+      font-size: 9.5pt;
+      color: #374151;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 5px;
+      padding: 8px 14px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      cursor: pointer;
+      color: #fff;
+      transition: opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+    }
+
+    .btn-primary { background-color: var(--primary-btn); }
+    .btn-secondary { background-color: var(--secondary-btn); }
+    .btn-danger { background-color: var(--danger-btn); }
+
+    /* Form Page Container */
+    .page-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px 28px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .updated-header {
+      text-align: right;
+      font-style: italic;
+      font-size: 9pt;
+      margin-bottom: 2px;
+    }
+
+    .form-frame {
+      border: 2px solid var(--border-color);
+      width: 100%;
+    }
+
+    /* Section Headers & Text Blocks */
+    .main-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 12pt;
+      padding: 8px 4px;
+      border-bottom: 1.5px solid var(--border-color);
+      letter-spacing: 0.2px;
+    }
+
+    .sub-header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 10pt;
+      padding: 5px 4px 3px 4px;
+    }
+
+    .text-block {
+      padding: 4px 8px 8px 8px;
+      border-bottom: 1.5px solid var(--border-color);
+      font-size: 9.5pt;
+      text-align: left;
+    }
+
+    .text-block p {
+      margin: 3px 0;
+    }
+
+    .text-block a {
+      color: #0000ee;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    /* Grid Rows */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .cell {
+      padding: 4px 6px;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cell:last-child {
+      border-right: none;
+    }
+
+    .field-label {
+      font-size: 8pt;
+      font-weight: bold;
+      margin-bottom: 3px;
+      line-height: 1.15;
+    }
+
+    .field-label span.normal {
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    /* Inputs */
+    .form-input {
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background-color: var(--bg-highlight);
+      font-family: inherit;
+      font-size: 10pt;
+      padding: 5px 6px;
+      color: #000;
+    }
+
+    .form-input:hover, .form-input:focus {
+      background-color: var(--bg-highlight-hover);
+      border-color: #93c5fd;
+      outline: none;
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 95px;
+    }
+
+    /* Section Banner */
+    .section-banner {
+      font-weight: bold;
+      font-size: 9.5pt;
+      padding: 4px 6px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Initials & Statements Rows */
+    .ack-row {
+      display: flex;
+      width: 100%;
+      border-bottom: 1px solid var(--border-color);
+      align-items: stretch;
+    }
+
+    .initial-col {
+      width: 95px;
+      min-width: 95px;
+      padding: 4px 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .initial-caption {
+      font-size: 8pt;
+      font-style: italic;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+
+    .statement-col {
+      flex: 1;
+      padding: 6px 8px;
+      display: flex;
+      font-size: 9.5pt;
+    }
+
+    .statement-letter {
+      width: 22px;
+      min-width: 22px;
+    }
+
+    .statement-text {
+      flex: 1;
+    }
+
+    /* Interactive Signature / Initial Trigger Box */
+    .pad-trigger {
+      width: 100%;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      font-family: inherit;
+      border-bottom: 1.5px solid #000;
+      background-color: var(--bg-highlight);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 3px 3px 0 0;
+      transition: background-color 0.15s;
+    }
+
+    .pad-trigger.signature-box {
+      height: 44px;
+      border: 1px dashed #9ca3af;
+      border-bottom: 1.5px solid #000;
+    }
+
+    .pad-trigger:hover {
+      background-color: var(--bg-highlight-hover);
+    }
+
+    .pad-trigger:focus-visible, .btn:focus-visible, .modal-close:focus-visible {
+      outline: 3px solid #1a56db;
+      outline-offset: 2px;
+    }
+
+    .pad-placeholder {
+      font-size: 7.5pt;
+      color: #6b7280;
+      pointer-events: none;
+      text-align: center;
+      padding: 0 2px;
+    }
+
+    .pad-trigger img {
+      max-width: 96%;
+      max-height: 92%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .pad-trigger.signed .pad-placeholder {
+      display: none;
+    }
+
+    .pad-trigger.signed img {
+      display: block;
+    }
+
+    /* Footer */
+    .form-footer {
+      padding-top: 6px;
+      font-weight: bold;
+      font-size: 10pt;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .toolbar-notice {
+      flex-basis: 100%;
+      font-size: 8.5pt;
+      color: #92400e;
+      background: #fef3c7;
+      border-radius: 4px;
+      padding: 6px 10px;
+    }
+
+    .save-toggle {
+      font-size: 9pt;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #374151;
+    }
+
+    .field-error {
+      border-color: #dc2626 !important;
+      background-color: #fee2e2 !important;
+    }
+
+    .type-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 9pt;
+    }
+
+    .type-row input {
+      flex: 1;
+      padding: 6px 8px;
+      font-size: 11pt;
+      border: 1px solid #9ca3af;
+      border-radius: 4px;
+    }
+
+    .progress-wrap {
+      max-width: 850px;
+      margin: 0 auto 12px auto;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+    }
+    .stage-pill { font-size: 8.5pt; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #dbeafe; color: #1e40af; }
+    .stage-pill.approver { background: #fef3c7; color: #92400e; }
+    .stage-pill.complete { background: #d1fae5; color: #065f46; }
+    .progress-track { flex: 1 1 160px; height: 10px; background: #e5e7eb; border-radius: 5px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; background: #1a56db; transition: width 0.25s; }
+    .progress-text { font-size: 9pt; color: #374151; }
+    .status-msg { flex-basis: 100%; font-size: 9pt; color: #92400e; }
+    .status-msg:empty { display: none; }
+
+    .form-input:disabled {
+      background-color: #eef0f3;
+      color: #000;
+      -webkit-text-fill-color: #000;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+    .pad-trigger:disabled { cursor: not-allowed; background-color: #eef0f3; }
+    .pad-trigger[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
+    .read-check { display: flex; align-items: center; gap: 3px; font-size: 7pt; margin-top: 3px; line-height: 1.1; }
+
+    .flash { animation: flash 1.4s ease; }
+    @keyframes flash { 0%, 100% { box-shadow: none; } 30% { box-shadow: 0 0 0 4px #fbbf24; } }
+
+    .integrity { font-size: 8pt; color: #374151; padding-top: 6px; line-height: 1.4; word-break: break-all; }
+    .integrity .ok { color: #047857; }
+    .integrity .bad { color: #b91c1c; font-weight: 700; }
+
+    /* Applied while rendering the PDF export so it looks like the printed form */
+    .exporting .form-input::placeholder { color: transparent; }
+    .exporting .pad-placeholder, .exporting .read-check { display: none !important; }
+    .exporting .form-input, .exporting .pad-trigger { background: transparent !important; border-color: transparent !important; }
+    .exporting .pad-trigger { border-bottom: 1.5px solid #000 !important; }
+    .exporting textarea.form-input { resize: none; }
+    .exporting select.form-input { appearance: none; -webkit-appearance: none; }
+
+    /* Touch / Stylus / Mouse Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #fff;
+      width: 100%;
+      max-width: 540px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 12px 16px;
+      background: #1f2937;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-weight: bold;
+      font-size: 11pt;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 16pt;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .canvas-instructions {
+      font-size: 9pt;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    .canvas-wrapper {
+      width: 100%;
+      height: 220px;
+      border: 2px dashed #6b7280;
+      border-radius: 6px;
+      background: #fafafa;
+      position: relative;
+      touch-action: none;
+    }
+
+    .canvas-baseline {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 45px;
+      border-bottom: 1px solid #d1d5db;
+      pointer-events: none;
+    }
+
+    #drawingCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: crosshair;
+      touch-action: none;
+    }
+
+    .modal-footer {
+      padding: 12px 16px;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Responsive adjustments for mobile screens */
+    @media (max-width: 640px) {
+      body {
+        padding: 8px;
+      }
+      .page-container {
+        padding: 12px;
+      }
+      .cell {
+        width: 100% !important;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .row .cell:last-child {
+        border-bottom: none;
+      }
+      .initial-col {
+        width: 80px;
+        min-width: 80px;
+      }
+    }
+
+    /* Print Stylesheet for clean PDF / Paper output */
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+
+    @media print {
+      .form-input::placeholder {
+        color: transparent !important;
+      }
+      textarea.form-input {
+        resize: none;
+      }
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .toolbar, .modal-backdrop, .progress-wrap, .read-check {
+        display: none !important;
+      }
+      .page-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .form-input, .pad-trigger {
+        background-color: transparent !important;
+        border-color: transparent !important;
+      }
+      .pad-trigger {
+        border-bottom: 1.5px solid #000 !important;
+      }
+      .pad-placeholder {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Controls Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-info">
+      <strong>DD Form 2983 Interactive Mode:</strong> Tap or click any blue field to type, or tap any <em>Initial / Signature</em> box to sign with a finger, stylus, or mouse.
+    </div>
+    <div class="toolbar-actions">
+      <label class="save-toggle"><input type="checkbox" id="saveToggle"> Save progress on this device</label>
+      <button type="button" class="btn btn-secondary" onclick="fillTodayDates()">Auto-Fill Today's Date (Item 5)</button>
+      <button type="button" class="btn btn-danger" onclick="resetForm()">Clear All</button>
+      <button type="button" class="btn btn-primary" onclick="printForm()">Print</button>
+      <button type="button" class="btn btn-primary" onclick="exportPdf()">Export PDF</button>
+      <button type="button" class="btn btn-secondary" onclick="exportData()">Export Data</button>
+      <button type="button" class="btn btn-secondary" onclick="document.getElementById('importFile').click()">Import Data</button>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+    </div>
+    <div class="toolbar-notice">
+      This is an unofficial convenience copy of DD Form 2983. A hand-drawn or typed mark here is not a valid official signature; the signed original is what gets filed. If "Save progress" is on, your entries (including names and signatures) are stored in this browser only; turn it off on shared computers.
+    </div>
+  </div>
+
+  <!-- Progress, stage and status -->
+  <div class="progress-wrap" id="progressWrap">
+    <span class="stage-pill" id="stagePill">Stage 1: Recruit/Trainee</span>
+    <div class="progress-track" role="progressbar" aria-label="Required items completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-text" id="progressText"></span>
+    <button type="button" class="btn btn-primary" id="nextBtn" onclick="goToNext()">Next required item</button>
+    <button type="button" class="btn btn-secondary" id="stageNext" onclick="stageNextAction()"></button>
+    <button type="button" class="btn btn-secondary" id="stageBack" onclick="stageBackAction()"></button>
+    <div class="status-msg" id="statusMsg" role="status"></div>
+  </div>
+
+  <!-- Main DD Form 2983 Page -->
+  <div class="page-container">
+    <div class="updated-header">(Updated 20260813)</div>
+
+    <form id="dd2983Form" class="form-frame" onsubmit="return false;">
+      <div class="main-title">RECRUIT/TRAINEE PROHIBITED ACTIVITIES ACKNOWLEDGMENT</div>
+
+      <!-- Privacy Act Statement -->
+      <div class="sub-header">PRIVACY ACT STATEMENT</div>
+      <div class="text-block">
+        <p><strong>AUTHORITY:</strong> 10 U.S.C. 136, Under Secretary of Defense for Personnel and Readiness; DoD Instruction 1304.33, Standardized Protection Policies Prohibiting Inappropriate Relations Between Recruiters and Recruits, and Trainers and Trainees.</p>
+        <p><strong>PRINCIPAL PURPOSE(S):</strong> To document your understanding of the prohibitions identified in section 7 of this form.</p>
+        <p><strong>ROUTINE USE(S):</strong> The DoW Blanket Routine Uses found at <a href="https://dpclo.defense.gov/Privacy/SORNsIndex/BlanketRoutineUses.aspx" target="_blank" rel="noopener noreferrer">https://dpclo.defense.gov/Privacy/SORNsIndex/BlanketRoutineUses.aspx</a> apply to this collection.</p>
+        <p><strong>DISCLOSURE:</strong> Voluntary. However, if you fail to provide the requested information or complete this form, you might not be able to complete your enlistment or receive training.</p>
+      </div>
+
+      <!-- Instructions -->
+      <div class="sub-header">INSTRUCTIONS</div>
+      <div class="text-block">
+        <p>In accordance with DoDI 1304.33, this form will be read and signed no later than the first visit with a recruiter following a recruit's entry into the Delayed Entry Program or read and signed no later than the first day of entry-level training for a trainee. As a minimum, the signed original will be retained in the recruit's file until they enter active duty or in the trainee's file until they detach from the training command or school they are attending. Please initial beside each entry acknowledging that you have read and understand the statement.</p>
+      </div>
+
+      <!-- Row: Fields 1, 2, 3 -->
+      <div class="row">
+        <div class="cell" style="width: 42%;">
+          <label class="field-label" for="field1">1. RECRUIT/TRAINEE NAME <span class="normal">(Last, First, Middle)</span></label>
+          <input type="text" id="field1" class="form-input" placeholder="Last, First, Middle">
+        </div>
+        <div class="cell" style="width: 18%;">
+          <label class="field-label" for="field2">2. PAY GRADE</label>
+          <select id="field2" class="form-input">
+            <option value="">Select…</option>
+            <optgroup label="Enlisted"><option>E-1</option><option>E-2</option><option>E-3</option><option>E-4</option><option>E-5</option><option>E-6</option><option>E-7</option><option>E-8</option><option>E-9</option></optgroup>
+            <optgroup label="Warrant Officer"><option>W-1</option><option>W-2</option><option>W-3</option><option>W-4</option><option>W-5</option></optgroup>
+            <optgroup label="Officer"><option>O-1</option><option>O-2</option><option>O-3</option><option>O-4</option><option>O-5</option><option>O-6</option><option>O-7</option><option>O-8</option><option>O-9</option><option>O-10</option></optgroup>
+            <optgroup label="Other"><option>Cadet/Midshipman</option><option>Civilian</option></optgroup>
+          </select>
+        </div>
+        <div class="cell" style="width: 40%;">
+          <label class="field-label" for="field3">3. RECRUITING OFFICE/TRAINING COMMAND</label>
+          <input type="text" id="field3" class="form-input" placeholder="Office or Command">
+        </div>
+      </div>
+
+      <!-- Row: Fields 4, 5, 6 -->
+      <div class="row">
+        <div class="cell" style="width: 42%;">
+          <label class="field-label" for="field4">4. RECRUITING OFFICE/TRAINING COMMAND ADDRESS <span class="normal">(City, State, ZIP Code)</span></label>
+          <input type="text" id="field4" class="form-input" placeholder="City, ST 12345" autocomplete="off">
+        </div>
+        <div class="cell" style="width: 18%;">
+          <label class="field-label" for="field5">5. DATE SIGNED<br><span class="normal">(YYYYMMDD)</span></label>
+          <input type="text" id="field5" class="form-input date-field" maxlength="8" pattern="\d{8}" title="Format: YYYYMMDD" placeholder="YYYYMMDD" inputmode="numeric">
+        </div>
+        <div class="cell" style="width: 40%;">
+          <div class="field-label" id="lbl6">6. SIGNATURE</div>
+          <button type="button" class="pad-trigger signature-box" aria-labelledby="lbl6" data-pad-id="sig_6" data-pad-label="Item 6 - Recruit/Trainee Signature" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Tap / Click to Sign</span>
+            <img alt="Recruit/Trainee Signature">
+          </button>
+        </div>
+      </div>
+
+      <!-- Section 7 Header -->
+      <div class="section-banner">7. I ACKNOWLEDGE AND UNDERSTAND THAT AS A RECRUIT OR TRAINEE, I WILL NOT:</div>
+
+      <!-- 7.a -->
+      <div class="ack-row">
+        <div class="initial-col" style="justify-content: space-between;">
+          <div class="initial-caption">(Initial)</div>
+          <button type="button" class="pad-trigger" data-pad-id="init_7a" data-pad-label="Item 7.a - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7a">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">a.</div>
+          <div class="statement-text">
+            Develop, attempt to develop, or conduct a personal, intimate, or sexual relationship with a recruiter or trainer. This includes, but is not limited to, dating, handholding, kissing, embracing, caressing, and engaging in sexual activities. Prohibited personal, intimate, or sexual relationships include those relationships conducted in person or via cards, letters, e-mails, telephone calls, instant messaging, video, photographs, social networking, or any other means of communication.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.b -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7b" data-pad-label="Item 7.b - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7b">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">b.</div>
+          <div class="statement-text">
+            Establish a common household with a recruiter/trainer, that is, share the same living area in an apartment, house, or other dwelling.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.c -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7c" data-pad-label="Item 7.c - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7c">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">c.</div>
+          <div class="statement-text">
+            Consume alcohol with a recruiter/trainer on a personal social basis.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.d -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7d" data-pad-label="Item 7.d - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7d">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">d.</div>
+          <div class="statement-text">
+            Attend social gatherings, clubs, bars, theaters or similar establishments on a personal social basis with a recruiter/trainer.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.e -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7e" data-pad-label="Item 7.e - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7e">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">e.</div>
+          <div class="statement-text">
+            Allow entry of any recruiter/trainer in my dwelling or privately-owned vehicle except to conduct official business. Exceptions are permitted for official business when the safety or welfare of the recruiter/trainer is at risk.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.f -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7f" data-pad-label="Item 7.f - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7f">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">f.</div>
+          <div class="statement-text">
+            Gamble with a recruiter/trainer.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.g -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7g" data-pad-label="Item 7.g - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7g">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">g.</div>
+          <div class="statement-text">
+            Make sexual advances toward, or seek or accept sexual advances or favors from, a recruiter/trainer.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7.h -->
+      <div class="ack-row">
+        <div class="initial-col">
+          <button type="button" class="pad-trigger" data-pad-id="init_7h" data-pad-label="Item 7.h - Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 7h">
+          </button>
+        </div>
+        <div class="statement-col">
+          <div class="statement-letter">h.</div>
+          <div class="statement-text">
+            Lend money to, borrow money from, or otherwise become indebted to a recruiter/trainer.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8: Exceptions -->
+      <div class="text-block" style="border-bottom: 1px solid var(--border-color);">
+        <p><strong>8. EXCEPTIONS.</strong> Exceptions may be granted to accommodate relationships that existed prior to the start of the recruiting process or prior to the trainee starting the formal training process. These relationships include, but are not limited to, family members. Only the Recruit's or Trainee's Commander, O-4 or higher, or higher level authority, has the authority to approve these exceptions. Approved exceptions will be documented below and signed by the Recruit's or Trainee's Commander, O-4 or higher, or a higher-level authority.</p>
+        <label class="field-label" for="field8" style="display:block; margin-top:6px; font-size:9pt;">DESCRIPTION OF EXCEPTION(S):</label>
+        <textarea id="field8" class="form-input" placeholder="Enter description of approved exception(s), if applicable..."></textarea>
+      </div>
+
+      <!-- Section 9: Violations -->
+      <div class="ack-row">
+        <div class="initial-col" style="justify-content: space-between;">
+          <div class="initial-caption">(Initial)</div>
+          <button type="button" class="pad-trigger" data-pad-id="init_9" data-pad-label="Item 9 - Violations Initial" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Initial</span>
+            <img alt="Initial 9">
+          </button>
+        </div>
+        <div class="statement-col" style="align-items: center;">
+          <div class="statement-text">
+            <strong>9. VIOLATIONS.</strong> Violations of any part of paragraph 7.a. through 7.h., not granted an exception in paragraph 8, may result in disciplinary action.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 10: Approved By -->
+      <div class="section-banner">10. APPROVED BY</div>
+      <div class="row" style="border-bottom: none;">
+        <div class="cell" style="width: 30%;">
+          <label class="field-label" for="field10a">a. NAME <span class="normal">(Last, First, Middle Initial)</span></label>
+          <input type="text" id="field10a" class="form-input" placeholder="Last, First, MI">
+        </div>
+        <div class="cell" style="width: 22%;">
+          <label class="field-label" for="field10b">b. TITLE</label>
+          <input type="text" id="field10b" class="form-input" placeholder="Title">
+        </div>
+        <div class="cell" style="width: 16%;">
+          <label class="field-label" for="field10c">c. DATE SIGNED<br><span class="normal">(YYYYMMDD)</span></label>
+          <input type="text" id="field10c" class="form-input date-field" maxlength="8" pattern="\d{8}" title="Format: YYYYMMDD" placeholder="YYYYMMDD" inputmode="numeric">
+        </div>
+        <div class="cell" style="width: 32%;">
+          <div class="field-label" id="lbl10d">d. SIGNATURE/RANK</div>
+          <button type="button" class="pad-trigger signature-box" aria-labelledby="lbl10d" data-pad-id="sig_10d" data-pad-label="Item 10.d - Approving Official Signature/Rank" onclick="openSignatureModal(this)">
+            <span class="pad-placeholder">Tap / Click to Sign</span>
+            <img alt="Approving Official Signature">
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div id="integrity" class="integrity" aria-live="polite"></div>
+    <div class="form-footer">
+      <span>DD FORM 2983, JAN 2015</span>
+    </div>
+  </div>
+
+  <!-- Signature & Initials Drawing Modal (Supports Touch, Stylus & Mouse via Pointer Events) -->
+  <div id="signatureModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <span id="modalTitle" class="modal-title">Sign / Initial</span>
+        <button type="button" class="modal-close" onclick="closeSignatureModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="canvas-instructions">Use your finger, stylus, or mouse to draw inside the box below, or type it instead.</p>
+        <div class="canvas-wrapper">
+          <div class="canvas-baseline"></div>
+          <canvas id="drawingCanvas"></canvas>
+        </div>
+        <div class="type-row">
+          <label for="typedInput">Or type:</label>
+          <input type="text" id="typedInput" maxlength="40" autocomplete="off">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="btn btn-danger" onclick="clearCanvas()">Clear Pad</button>
+          <button type="button" class="btn btn-secondary" onclick="undoStroke()">Undo</button>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="btn btn-secondary" onclick="closeSignatureModal()">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="saveSignature()">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    let activeTriggerElement = null;
+    let isDrawing = false;
+    let strokes = [];          // each stroke is an array of {x, y, w} in CSS pixels
+    let currentStroke = null;
+    let typedMode = false;     // true while the canvas is showing typed text instead of strokes
+
+    let stage = 'recruit';     // 'recruit' -> 'approver' -> 'complete'
+    let seals = {};            // { recruit: {time, hash}, final: {time, hash} }
+    const dwellDone = new Set();   // initial boxes unlocked by the statement being on screen for a few seconds
+    const ticked = new Set();      // initial boxes unlocked by the "I've read this" checkbox
+
+    const STORAGE_KEY = 'dd2983_v6_data';
+    const STORAGE_FLAG = 'dd2983_v6_save_on';
+    const TYPED_FONT = '"Brush Script MT", "Segoe Script", "Snell Roundhand", cursive';
+    const DWELL_MS = 3000;
+    const APPROVER_FIELDS = ['field8', 'field10a', 'field10b', 'field10c'];
+    const APPROVER_PADS = ['sig_10d'];
+    const STATES = 'AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY AS GU MP PR VI AA AE AP'.split(' ');
+
+    const modal = document.getElementById('signatureModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const canvas = document.getElementById('drawingCanvas');
+    const ctx = canvas.getContext('2d');
+    const typedInput = document.getElementById('typedInput');
+    const saveToggle = document.getElementById('saveToggle');
+    const form = document.getElementById('dd2983Form');
+    const background = [document.querySelector('.toolbar'), document.getElementById('progressWrap'), document.querySelector('.page-container')];
+    const allPads = Array.from(document.querySelectorAll('.pad-trigger'));
+    const initialPads = allPads.filter(p => p.dataset.padId.startsWith('init_'));
+
+    function padById(id) { return document.querySelector(`[data-pad-id="${id}"]`); }
+    function padSigned(id) { return padById(id).classList.contains('signed'); }
+    function formFields() { return Array.from(form.querySelectorAll('input[id], textarea[id], select[id]')); }
+    function ownerStage(id) { return (APPROVER_FIELDS.includes(id) || APPROVER_PADS.includes(id)) ? 'approver' : 'recruit'; }
+
+    // Give each pad button an accessible name (unless it already has aria-labelledby)
+    allPads.forEach(pad => {
+      if (!pad.hasAttribute('aria-labelledby')) {
+        pad.setAttribute('aria-label', pad.dataset.padLabel || 'Initial');
+      }
+    });
+
+    /* ---------- Required items, progress, next ---------- */
+
+    const REQUIRED = [
+      { id: 'field1', kind: 'field', stage: 'recruit', label: 'Item 1 name' },
+      { id: 'field2', kind: 'field', stage: 'recruit', label: 'Item 2 pay grade' },
+      { id: 'field3', kind: 'field', stage: 'recruit', label: 'Item 3 office/command' },
+      { id: 'field4', kind: 'field', stage: 'recruit', label: 'Item 4 address (City, ST ZIP)' },
+      { id: 'field5', kind: 'field', stage: 'recruit', label: 'Item 5 date' },
+      { id: 'sig_6', kind: 'pad', stage: 'recruit', label: 'Item 6 signature' },
+      ...'abcdefgh'.split('').map(l => ({ id: 'init_7' + l, kind: 'pad', stage: 'recruit', label: 'initials 7.' + l })),
+      { id: 'init_9', kind: 'pad', stage: 'recruit', label: 'initials for Item 9' },
+      { id: 'field10a', kind: 'field', stage: 'approver', label: 'Item 10.a name' },
+      { id: 'field10b', kind: 'field', stage: 'approver', label: 'Item 10.b title' },
+      { id: 'field10c', kind: 'field', stage: 'approver', label: 'Item 10.c date' },
+      { id: 'sig_10d', kind: 'pad', stage: 'approver', label: 'Item 10.d signature' }
+    ];
+
+    function itemEl(item) { return item.kind === 'pad' ? padById(item.id) : document.getElementById(item.id); }
+
+    function itemDone(item) {
+      if (item.kind === 'pad') return padSigned(item.id);
+      const el = document.getElementById(item.id);
+      const v = el.value.trim();
+      if (!v) return false;
+      if (item.id === 'field5' || item.id === 'field10c') return isValidDate(v);
+      if (item.id === 'field4') return isValidAddress(v);
+      return true;
+    }
+
+    function incompleteLabels(forStage) {
+      return REQUIRED.filter(i => i.stage === forStage && !itemDone(i)).map(i => i.label);
+    }
+
+    function showStatus(msg) {
+      const el = document.getElementById('statusMsg');
+      el.textContent = msg;
+      clearTimeout(showStatus.t);
+      if (msg) showStatus.t = setTimeout(() => { el.textContent = ''; }, 6000);
+    }
+
+    function updateProgress() {
+      const pill = document.getElementById('stagePill');
+      const text = document.getElementById('progressText');
+      const fill = document.getElementById('progressFill');
+      const track = document.getElementById('progressTrack');
+      const next = document.getElementById('nextBtn');
+      const sNext = document.getElementById('stageNext');
+      const sBack = document.getElementById('stageBack');
+
+      pill.className = 'stage-pill' + (stage === 'recruit' ? '' : ' ' + stage);
+      pill.textContent = { recruit: 'Stage 1: Recruit/Trainee', approver: 'Stage 2: Approving Official', complete: 'Complete and sealed' }[stage];
+
+      const items = REQUIRED.filter(i => i.stage === (stage === 'complete' ? 'approver' : stage));
+      const done = stage === 'complete' ? items.length : items.filter(itemDone).length;
+      const pct = Math.round(100 * done / items.length);
+      fill.style.width = pct + '%';
+      track.setAttribute('aria-valuenow', pct);
+      text.textContent = stage === 'complete' ? 'All required items complete' : `${done} of ${items.length} required items`;
+      next.hidden = stage === 'complete' || done === items.length;
+
+      sNext.hidden = false;
+      sBack.hidden = stage === 'recruit';
+      if (stage === 'recruit') {
+        sNext.textContent = 'Hand off to approver →';
+        sNext.disabled = !padSigned('sig_6');
+        sNext.title = padSigned('sig_6') ? '' : 'Sign Item 6 first';
+      } else if (stage === 'approver') {
+        sNext.textContent = 'Finalize & seal';
+        sNext.disabled = !padSigned('sig_10d');
+        sNext.title = padSigned('sig_10d') ? '' : 'Sign Item 10.d first';
+        sBack.textContent = '← Return to recruit stage';
+      } else {
+        sNext.hidden = true;
+        sBack.textContent = 'Reopen for approver';
+      }
+    }
+
+    function goToNext() {
+      const item = REQUIRED.find(i => i.stage === stage && !itemDone(i));
+      if (!item) return;
+      const el = itemEl(item);
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.focus({ preventScroll: true });
+      el.classList.remove('flash');
+      void el.offsetWidth;
+      el.classList.add('flash');
+      showStatus('Next: ' + item.label);
+    }
+
+    /* ---------- Stage locking ---------- */
+
+    function applyLocks() {
+      formFields().forEach(el => { el.disabled = ownerStage(el.id) !== stage; });
+      allPads.forEach(pad => { pad.disabled = ownerStage(pad.dataset.padId) !== stage; });
+      document.querySelectorAll('.read-check input').forEach(cb => { cb.disabled = stage !== 'recruit'; });
+    }
+
+    function refreshAll() {
+      applyLocks();
+      applyGate();
+      document.querySelectorAll('.date-field').forEach(checkDateField);
+      checkAddress(document.getElementById('field4'));
+      updateProgress();
+      verifyIntegrity();
+    }
+
+    /* ---------- Read-before-initial gate ---------- */
+
+    function isUnlocked(id) { return padSigned(id) || dwellDone.has(id) || ticked.has(id); }
+
+    function applyGate() {
+      initialPads.forEach(pad => {
+        const id = pad.dataset.padId;
+        const gated = stage === 'recruit' && !isUnlocked(id);
+        pad.setAttribute('aria-disabled', gated ? 'true' : 'false');
+        pad.querySelector('.pad-placeholder').textContent = gated ? 'Read first' : 'Initial';
+        const cb = pad.parentElement.querySelector('.read-check input');
+        if (cb) cb.checked = ticked.has(id) || padSigned(id);
+      });
+    }
+
+    const rowToId = new Map();
+    const timers = new Map();
+    const observer = ('IntersectionObserver' in window) ? new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        const id = rowToId.get(en.target);
+        if (en.isIntersecting && en.intersectionRatio >= 0.6 && stage === 'recruit') {
+          if (!timers.has(id) && !dwellDone.has(id)) {
+            timers.set(id, setTimeout(() => {
+              timers.delete(id);
+              dwellDone.add(id);
+              applyGate();
+              saveState();
+            }, DWELL_MS));
+          }
+        } else if (timers.has(id)) {
+          clearTimeout(timers.get(id));
+          timers.delete(id);
+        }
+      });
+    }, { threshold: [0, 0.6, 1] }) : null;
+
+    initialPads.forEach(pad => {
+      const id = pad.dataset.padId;
+      const col = pad.parentElement;
+      const label = document.createElement('label');
+      label.className = 'read-check';
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.addEventListener('change', () => {
+        if (cb.checked) ticked.add(id); else ticked.delete(id);
+        applyGate();
+        saveState();
+      });
+      label.append(cb, document.createTextNode(" I've read this"));
+      col.appendChild(label);
+      const row = pad.closest('.ack-row');
+      rowToId.set(row, id);
+      if (observer) observer.observe(row);
+    });
+
+    /* ---------- Canvas drawing ---------- */
+
+    function resizeCanvas() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = '#000000';
+      ctx.fillStyle = '#000000';
+    }
+
+    function redraw() {
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      if (typedMode) {
+        drawTypedText(ctx, rect.width, rect.height, typedInput.value);
+        return;
+      }
+      strokes.forEach(stroke => {
+        if (stroke.length === 1) {
+          ctx.lineWidth = stroke[0].w;
+          ctx.beginPath();
+          ctx.moveTo(stroke[0].x, stroke[0].y);
+          ctx.lineTo(stroke[0].x + 0.1, stroke[0].y + 0.1);
+          ctx.stroke();
+          return;
+        }
+        for (let i = 1; i < stroke.length; i++) {
+          ctx.lineWidth = stroke[i].w;
+          ctx.beginPath();
+          ctx.moveTo(stroke[i - 1].x, stroke[i - 1].y);
+          ctx.lineTo(stroke[i].x, stroke[i].y);
+          ctx.stroke();
+        }
+      });
+    }
+
+    function drawTypedText(c, w, h, text) {
+      if (!text) return;
+      let size = Math.min(56, h * 0.4);
+      c.font = `italic ${size}px ${TYPED_FONT}`;
+      while (c.measureText(text).width > w - 32 && size > 12) {
+        size -= 2;
+        c.font = `italic ${size}px ${TYPED_FONT}`;
+      }
+      c.textBaseline = 'alphabetic';
+      c.fillText(text, 16, h - 48);
+    }
+
+    function hasInk() {
+      return typedMode ? typedInput.value.trim().length > 0 : strokes.length > 0;
+    }
+
+    function openSignatureModal(triggerEl) {
+      const id = triggerEl.dataset.padId;
+      if (triggerEl.disabled) return;
+      if (triggerEl.getAttribute('aria-disabled') === 'true') {
+        showStatus(`Read statement ${triggerEl.dataset.padLabel.replace(/ - .*/, '').replace('Item ', '')} first: its initial box unlocks after a few seconds on screen, or tick "I've read this".`);
+        return;
+      }
+      activeTriggerElement = triggerEl;
+      modalTitle.textContent = triggerEl.dataset.padLabel || 'Draw Signature / Initial';
+      modal.classList.add('active');
+      background.forEach(el => { el.inert = true; });
+      resizeCanvas();
+      clearCanvas();
+      modal.querySelector('.modal-close').focus();
+    }
+
+    function closeSignatureModal() {
+      modal.classList.remove('active');
+      background.forEach(el => { el.inert = false; });
+      if (activeTriggerElement) activeTriggerElement.focus();
+      activeTriggerElement = null;
+    }
+
+    function clearCanvas() {
+      strokes = [];
+      currentStroke = null;
+      typedMode = false;
+      typedInput.value = '';
+      redraw();
+    }
+
+    function undoStroke() {
+      if (typedMode) {
+        clearCanvas();
+        return;
+      }
+      strokes.pop();
+      redraw();
+    }
+
+    function getPointerPos(evt) {
+      const rect = canvas.getBoundingClientRect();
+      return { x: evt.clientX - rect.left, y: evt.clientY - rect.top };
+    }
+
+    function strokeWidth(evt) {
+      // Pressure sensitivity for tablet styluses when available
+      if (evt.pointerType === 'pen' && evt.pressure > 0) {
+        return Math.max(1.2, Math.min(4.5, evt.pressure * 4));
+      }
+      return 2.4;
+    }
+
+    canvas.addEventListener('pointerdown', (evt) => {
+      evt.preventDefault();
+      if (typedMode) clearCanvas();   // drawing replaces typed text
+      canvas.setPointerCapture(evt.pointerId);
+      isDrawing = true;
+      const pos = getPointerPos(evt);
+      currentStroke = [{ x: pos.x, y: pos.y, w: strokeWidth(evt) }];
+      strokes.push(currentStroke);
+      redraw();
+    });
+
+    canvas.addEventListener('pointermove', (evt) => {
+      if (!isDrawing) return;
+      evt.preventDefault();
+      const pos = getPointerPos(evt);
+      currentStroke.push({ x: pos.x, y: pos.y, w: strokeWidth(evt) });
+      const n = currentStroke.length;
+      ctx.lineWidth = currentStroke[n - 1].w;
+      ctx.beginPath();
+      ctx.moveTo(currentStroke[n - 2].x, currentStroke[n - 2].y);
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+    });
+
+    function endStroke(evt) {
+      if (!isDrawing) return;
+      evt.preventDefault();
+      isDrawing = false;
+      currentStroke = null;
+    }
+
+    canvas.addEventListener('pointerup', endStroke);
+    canvas.addEventListener('pointercancel', endStroke);
+
+    // Typing replaces any drawing and previews on the canvas
+    typedInput.addEventListener('input', () => {
+      strokes = [];
+      typedMode = true;
+      redraw();
+    });
+
+    // Escape closes the dialog; Tab is kept inside it
+    document.addEventListener('keydown', (evt) => {
+      if (!modal.classList.contains('active')) return;
+      if (evt.key === 'Escape') {
+        closeSignatureModal();
+        return;
+      }
+      if (evt.key === 'Tab') {
+        const focusable = modal.querySelectorAll('button, input');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (evt.shiftKey && document.activeElement === first) {
+          evt.preventDefault();
+          last.focus();
+        } else if (!evt.shiftKey && document.activeElement === last) {
+          evt.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!modal.classList.contains('active')) return;
+      resizeCanvas();
+      redraw();   // strokes are kept in memory, so resizing never loses the drawing
+    });
+
+    function setPadImage(pad, src) {
+      const img = pad.querySelector('img');
+      if (src) {
+        img.src = src;
+        pad.classList.add('signed');
+      } else {
+        img.removeAttribute('src');
+        pad.classList.remove('signed');
+      }
+    }
+
+    function saveSignature() {
+      if (!activeTriggerElement) return;
+      setPadImage(activeTriggerElement, hasInk() ? canvas.toDataURL('image/png') : null);
+      closeSignatureModal();
+      applyGate();
+      changed();
+    }
+
+    function changed() {
+      saveState();
+      updateProgress();
+      verifyIntegrity();
+    }
+
+    /* ---------- Field validation ---------- */
+
+    function isValidDate(value) {
+      if (!/^\d{8}$/.test(value)) return false;
+      const y = +value.slice(0, 4), m = +value.slice(4, 6), d = +value.slice(6, 8);
+      const dt = new Date(y, m - 1, d);
+      return y >= 1900 && dt.getFullYear() === y && dt.getMonth() === m - 1 && dt.getDate() === d;
+    }
+
+    function checkDateField(input) {
+      const bad = input.value !== '' && !isValidDate(input.value);
+      input.classList.toggle('field-error', bad);
+      input.setCustomValidity(bad ? 'Enter a real date as YYYYMMDD' : '');
+      input.title = bad ? 'Enter a real date as YYYYMMDD' : 'Format: YYYYMMDD';
+      return !bad;
+    }
+
+    document.querySelectorAll('.date-field').forEach(input => {
+      input.addEventListener('input', () => {
+        input.value = input.value.replace(/\D/g, '').slice(0, 8);   // digits only
+        if (input.value.length === 8 || input.classList.contains('field-error')) checkDateField(input);
+      });
+      input.addEventListener('blur', () => checkDateField(input));
+    });
+
+    // "City, ST 12345" or "City, ST, 12345-6789"; the state must be a real USPS code
+    function isValidAddress(value) {
+      const m = value.trim().match(/^(.+?),\s*([A-Za-z]{2})[,\s]+(\d{5})(?:-\d{4})?$/);
+      return !!m && STATES.includes(m[2].toUpperCase());
+    }
+
+    function checkAddress(input) {
+      const bad = input.value.trim() !== '' && !isValidAddress(input.value);
+      input.classList.toggle('field-error', bad);
+      input.title = bad ? 'Use City, ST ZIP (for example: Fort Meade, MD 20755)' : '';
+      return !bad;
+    }
+
+    const addressInput = document.getElementById('field4');
+    addressInput.addEventListener('blur', () => checkAddress(addressInput));
+    addressInput.addEventListener('input', () => { if (addressInput.classList.contains('field-error')) checkAddress(addressInput); });
+
+    // Fills the date for whichever stage is active (item 5, or 10.c for the approver)
+    function fillTodayDates() {
+      const now = new Date();
+      const formatted = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
+      const input = document.getElementById(stage === 'approver' ? 'field10c' : 'field5');
+      if (input.disabled) { showStatus('That date field is locked in this stage.'); return; }
+      if (!input.value.trim()) {
+        input.value = formatted;
+        checkDateField(input);
+        changed();
+      }
+    }
+
+    /* ---------- Reset ---------- */
+
+    function resetForm() {
+      if (!confirm('Are you sure you want to clear all fields, initials, signatures, and seals?')) return;
+      form.reset();
+      allPads.forEach(pad => setPadImage(pad, null));
+      dwellDone.clear();
+      ticked.clear();
+      timers.forEach(t => clearTimeout(t));   // a pending read-timer must not re-unlock a box after the reset
+      timers.clear();
+      clearCanvas();
+      seals = {};
+      stage = 'recruit';
+      refreshAll();
+      saveState();
+    }
+
+    /* ---------- Integrity seals ---------- */
+
+    function snapshot(scope) {
+      const entries = [];
+      formFields().forEach(el => {
+        if (scope === 'final' || ownerStage(el.id) === 'recruit') entries.push(['f:' + el.id, el.value]);
+      });
+      allPads.forEach(pad => {
+        const id = pad.dataset.padId;
+        if ((scope === 'final' || ownerStage(id) === 'recruit') && pad.classList.contains('signed')) {
+          entries.push(['p:' + id, pad.querySelector('img').getAttribute('src')]);
+        }
+      });
+      entries.sort((a, b) => a[0] < b[0] ? -1 : 1);
+      if (scope === 'final' && seals.recruit) entries.push(['seal:recruit', seals.recruit.hash]);
+      return JSON.stringify(entries);
+    }
+
+    // Plain-JS SHA-256, used when the browser's crypto.subtle is unavailable (it needs a secure context)
+    function sha256Fallback(bytes) {
+      const K = [];
+      for (let i = 2, n = 0; n < 64; i++) {
+        let prime = true;
+        for (let j = 2; j * j <= i; j++) if (i % j === 0) { prime = false; break; }
+        if (prime) { K[n++] = (Math.cbrt(i) % 1) * 4294967296 | 0; }
+      }
+      const H = [];
+      for (let i = 2, n = 0; n < 8; i++) {
+        let prime = true;
+        for (let j = 2; j * j <= i; j++) if (i % j === 0) { prime = false; break; }
+        if (prime) { H[n++] = (Math.sqrt(i) % 1) * 4294967296 | 0; }
+      }
+      const len = bytes.length, bitLen = len * 8;
+      const padded = new Uint8Array(((len + 9 + 63) >> 6) << 6);
+      padded.set(bytes);
+      padded[len] = 0x80;
+      const dv = new DataView(padded.buffer);
+      dv.setUint32(padded.length - 8, Math.floor(bitLen / 4294967296));
+      dv.setUint32(padded.length - 4, bitLen >>> 0);
+      const w = new Int32Array(64);
+      const rotr = (x, n) => (x >>> n) | (x << (32 - n));
+      for (let off = 0; off < padded.length; off += 64) {
+        for (let i = 0; i < 16; i++) w[i] = dv.getInt32(off + i * 4);
+        for (let i = 16; i < 64; i++) {
+          const s0 = rotr(w[i - 15], 7) ^ rotr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
+          const s1 = rotr(w[i - 2], 17) ^ rotr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
+          w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
+        }
+        let [a, b, c, d, e, f, g, h] = H;
+        for (let i = 0; i < 64; i++) {
+          const S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25);
+          const ch = (e & f) ^ (~e & g);
+          const t1 = (h + S1 + ch + K[i] + w[i]) | 0;
+          const S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22);
+          const maj = (a & b) ^ (a & c) ^ (b & c);
+          const t2 = (S0 + maj) | 0;
+          h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;
+        }
+        H[0] = (H[0] + a) | 0; H[1] = (H[1] + b) | 0; H[2] = (H[2] + c) | 0; H[3] = (H[3] + d) | 0;
+        H[4] = (H[4] + e) | 0; H[5] = (H[5] + f) | 0; H[6] = (H[6] + g) | 0; H[7] = (H[7] + h) | 0;
+      }
+      return H.map(x => (x >>> 0).toString(16).padStart(8, '0')).join('');
+    }
+
+    async function sha256Hex(str) {
+      const bytes = new TextEncoder().encode(str);
+      if (window.crypto && crypto.subtle) {
+        const buf = await crypto.subtle.digest('SHA-256', bytes);
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+      return sha256Fallback(bytes);
+    }
+
+    async function hashOf(scope) {
+      return (await sha256Hex(snapshot(scope))) || 'unavailable';
+    }
+
+    async function verifyIntegrity() {
+      const box = document.getElementById('integrity');
+      const lines = [];
+      const parts = [['recruit', 'Recruit/trainee section (items 1-7, 9)'], ['final', 'Complete form (including approval)']];
+      for (const [key, name] of parts) {
+        const seal = seals[key];
+        if (!seal) continue;
+        let status;
+        if (seal.hash === 'unavailable') {
+          status = '<span>hash unavailable in this browser</span>';
+        } else {
+          const now = await hashOf(key);
+          status = now === seal.hash ? '<span class="ok">&#10003; unchanged since sealed</span>' : '<span class="bad">&#9888; CONTENT CHANGED SINCE SEALED</span>';
+        }
+        const short = seal.hash === 'unavailable' ? '' : ' &middot; SHA-256 ' + seal.hash.slice(0, 16) + '&hellip;';
+        lines.push(`${name} sealed ${seal.time.replace('T', ' ').slice(0, 19)} UTC${short} &middot; ${status}`);
+      }
+      box.innerHTML = lines.join('<br>');
+    }
+
+    function nowIso() { return new Date().toISOString(); }
+
+    async function stageNextAction() {
+      if (stage === 'recruit') {
+        if (!padSigned('sig_6')) { showStatus('Sign Item 6 first.'); return; }
+        const missing = incompleteLabels('recruit');
+        if (missing.length && !confirm('Still missing: ' + missing.join(', ') + '.\n\nHand off anyway?')) return;
+        if (!confirm('Hand off to the approving official? Items 1-7 and 9 will be locked and sealed.')) return;
+        seals.recruit = { time: nowIso(), hash: await hashOf('recruit') };
+        stage = 'approver';
+      } else if (stage === 'approver') {
+        if (!padSigned('sig_10d')) { showStatus('Sign Item 10.d first.'); return; }
+        const missing = incompleteLabels('approver');
+        if (missing.length && !confirm('Still missing: ' + missing.join(', ') + '.\n\nFinalize anyway?')) return;
+        if (!confirm('Finalize and seal the whole form? Everything will be locked.')) return;
+        seals.final = { time: nowIso(), hash: await hashOf('final') };
+        stage = 'complete';
+      }
+      refreshAll();
+      saveState();
+    }
+
+    function stageBackAction() {
+      if (stage === 'approver') {
+        if (!confirm('Return to the recruit stage? This clears the Item 6 signature, the Item 10.d signature, and the handoff seal.')) return;
+        setPadImage(padById('sig_6'), null);
+        setPadImage(padById('sig_10d'), null);
+        seals = {};
+        stage = 'recruit';
+      } else if (stage === 'complete') {
+        if (!confirm('Reopen for the approver? This clears the Item 10.d signature and the final seal.')) return;
+        setPadImage(padById('sig_10d'), null);
+        delete seals.final;
+        stage = 'approver';
+      }
+      refreshAll();
+      saveState();
+    }
+
+    /* ---------- State, save and import/export ---------- */
+
+    function collectState() {
+      const data = { app: 'DD2983', version: 6, stage, fields: {}, pads: {}, read: [], seals };
+      formFields().forEach(el => { data.fields[el.id] = el.value; });
+      allPads.forEach(pad => {
+        const img = pad.querySelector('img');
+        if (pad.classList.contains('signed') && img.getAttribute('src')) data.pads[pad.dataset.padId] = img.getAttribute('src');
+      });
+      data.read = Array.from(new Set([...dwellDone, ...ticked]));
+      return data;
+    }
+
+    // Accepts only known fields and pads, PNG data URLs, and a known stage; anything else is dropped
+    function sanitizeState(d) {
+      if (!d || typeof d !== 'object' || d.app !== 'DD2983') throw new Error('This is not a DD Form 2983 data file.');
+      const clean = { stage: 'recruit', fields: {}, pads: {}, read: [], seals: {} };
+      if (['recruit', 'approver', 'complete'].includes(d.stage)) clean.stage = d.stage;
+      const fieldIds = new Set(formFields().map(el => el.id));
+      Object.entries(d.fields || {}).forEach(([k, v]) => {
+        if (fieldIds.has(k) && typeof v === 'string') clean.fields[k] = v.slice(0, 2000);
+      });
+      const padIds = new Set(allPads.map(p => p.dataset.padId));
+      Object.entries(d.pads || {}).forEach(([k, v]) => {
+        if (padIds.has(k) && typeof v === 'string' && v.length < 2000000 && /^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(v)) clean.pads[k] = v;
+      });
+      (Array.isArray(d.read) ? d.read : []).forEach(id => { if (padIds.has(id)) clean.read.push(id); });
+      ['recruit', 'final'].forEach(k => {
+        const s = d.seals && d.seals[k];
+        if (s && typeof s.time === 'string' && typeof s.hash === 'string' && /^\d{4}-\d{2}-\d{2}T[\d:.]+Z$/.test(s.time) && /^([0-9a-f]{64}|unavailable)$/.test(s.hash)) {
+          clean.seals[k] = { time: s.time, hash: s.hash };
+        }
+      });
+      return clean;
+    }
+
+    function applyState(clean) {
+      form.reset();
+      allPads.forEach(pad => setPadImage(pad, null));
+      Object.entries(clean.fields).forEach(([id, val]) => { document.getElementById(id).value = val; });
+      Object.entries(clean.pads).forEach(([id, src]) => setPadImage(padById(id), src));
+      dwellDone.clear();
+      ticked.clear();
+      clean.read.forEach(id => dwellDone.add(id));
+      seals = clean.seals;
+      stage = clean.stage;
+      refreshAll();
+    }
+
+    function saveState() {
+      try {
+        if (!saveToggle.checked) return;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(collectState()));
+      } catch (e) { /* storage unavailable; the form still works without it */ }
+    }
+
+    function restoreState() {
+      try {
+        if (localStorage.getItem(STORAGE_FLAG) !== '1') return;
+        saveToggle.checked = true;
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) applyState(sanitizeState(JSON.parse(raw)));
+      } catch (e) { /* ignore corrupt or unavailable storage */ }
+    }
+
+    saveToggle.addEventListener('change', () => {
+      try {
+        if (saveToggle.checked) {
+          localStorage.setItem(STORAGE_FLAG, '1');
+          saveState();
+        } else {
+          localStorage.removeItem(STORAGE_FLAG);
+          localStorage.removeItem(STORAGE_KEY);   // turning it off also deletes what was stored
+        }
+      } catch (e) { /* ignore */ }
+    });
+
+    function todayStamp() {
+      const n = new Date();
+      return `${n.getFullYear()}${String(n.getMonth() + 1).padStart(2, '0')}${String(n.getDate()).padStart(2, '0')}`;
+    }
+
+    function downloadBlob(blob, name) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    }
+
+    function exportData() {
+      if (!confirm('The data file contains personal information and signatures and is not encrypted. Store and share it securely. Continue?')) return;
+      downloadBlob(new Blob([JSON.stringify(collectState(), null, 2)], { type: 'application/json' }), `DD2983_data_${todayStamp()}.json`);
+    }
+
+    document.getElementById('importFile').addEventListener('change', (evt) => {
+      const file = evt.target.files[0];
+      evt.target.value = '';
+      if (!file) return;
+      if (file.size > 20 * 1024 * 1024) { alert('That file is too large to be a DD 2983 data file.'); return; }
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const clean = sanitizeState(JSON.parse(reader.result));
+          if (!confirm('Importing replaces everything currently on the form. Continue?')) return;
+          applyState(clean);
+          saveState();
+          showStatus('Data imported.');
+        } catch (e) {
+          alert('Could not import: ' + e.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    /* ---------- PDF export and print ---------- */
+
+    async function exportPdf() {
+      if (!window.html2canvas || !window.jspdf) {
+        alert('The PDF libraries could not be loaded (they need an internet connection). Use Print and choose "Save as PDF" instead.');
+        return;
+      }
+      if (!confirm('The PDF will contain personal information and signatures. Store and share it securely. Continue?')) return;
+      document.body.classList.add('exporting');
+      try {
+        const el = document.querySelector('.page-container');
+        const shot = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff' });
+        const pdf = new window.jspdf.jsPDF({ unit: 'pt', format: 'letter' });
+        const margin = 36;
+        const pw = 612 - margin * 2, ph = 792 - margin * 2;
+        let ratio = pw / shot.width;
+        if (shot.height * ratio <= ph * 1.25) ratio = Math.min(ratio, ph / shot.height);   // nearly one page: shrink to fit
+        const sliceH = Math.floor(ph / ratio);
+        for (let y = 0, page = 0; y < shot.height; y += sliceH, page++) {
+          const h = Math.min(sliceH, shot.height - y);
+          const part = document.createElement('canvas');
+          part.width = shot.width;
+          part.height = h;
+          part.getContext('2d').drawImage(shot, 0, y, shot.width, h, 0, 0, shot.width, h);
+          if (page > 0) pdf.addPage();
+          pdf.addImage(part.toDataURL('image/png'), 'PNG', margin, margin, shot.width * ratio, h * ratio);
+        }
+        pdf.save(`DD2983_${todayStamp()}.pdf`);
+      } catch (e) {
+        alert('PDF export failed: ' + e.message);
+      } finally {
+        document.body.classList.remove('exporting');
+      }
+    }
+
+    function printForm() {
+      const missing = incompleteLabels('recruit');
+      if (stage !== 'recruit') missing.push(...incompleteLabels('approver'));
+      // Items 8 and 10 are only completed when an exception is approved, so they are not required in stage 1.
+      if (missing.length && !confirm('Still missing: ' + missing.join(', ') + '.\n\nPrint anyway?')) return;
+      window.print();
+    }
+
+    form.addEventListener('input', changed);
+    form.addEventListener('change', changed);
+    restoreState();
+    refreshAll();
+  </script>
+</body>
+</html>
+
+
+
