@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1603,7 +1603,18 @@
       document.body.classList.add('exporting');
       try {
         const el = document.querySelector('.page-container');
-        const shot = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff' });
+        // Render in a fixed desktop-width window so phones don't capture the narrow mobile layout.
+        const shot = await html2canvas(el, {
+          scale: 2,
+          backgroundColor: '#ffffff',
+          windowWidth: 1000,
+          onclone: (doc) => {
+            const clone = doc.querySelector('.page-container');
+            clone.style.width = '850px';
+            clone.style.maxWidth = '850px';
+            clone.style.boxShadow = 'none';
+          }
+        });
         const pdf = new window.jspdf.jsPDF({ unit: 'pt', format: 'letter' });
         const margin = 36;
         const pw = 612 - margin * 2, ph = 792 - margin * 2;
@@ -1642,6 +1653,3 @@
   </script>
 </body>
 </html>
-
-
-
