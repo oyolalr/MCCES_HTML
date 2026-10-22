@@ -276,8 +276,8 @@
     }
 
     .pad-trigger img {
-      max-width: 96%;
-      max-height: 92%;
+      width: 96%;
+      height: 92%;
       object-fit: contain;
       display: none;
     }
@@ -618,7 +618,7 @@
         </div>
         <div class="cell" style="width: 40%;">
           <label class="field-label" for="field3">3. RECRUITING OFFICE/TRAINING COMMAND</label>
-          <input type="text" id="field3" class="form-input" placeholder="Office or Command">
+          <input type="text" id="field3" class="form-input" placeholder="Office or Command" value="CTB, MCCES">
         </div>
       </div>
 
@@ -626,7 +626,7 @@
       <div class="row">
         <div class="cell" style="width: 42%;">
           <label class="field-label" for="field4">4. RECRUITING OFFICE/TRAINING COMMAND ADDRESS <span class="normal">(City, State, ZIP Code)</span></label>
-          <input type="text" id="field4" class="form-input" placeholder="City, ST 12345" autocomplete="off">
+          <input type="text" id="field4" class="form-input" placeholder="City, ST 12345" value="Twentynine Palms, CA 92277" autocomplete="off">
         </div>
         <div class="cell" style="width: 18%;">
           <label class="field-label" for="field5">5. DATE SIGNED<br><span class="normal">(YYYYMMDD)</span></label>
@@ -860,6 +860,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <script>
     let activeTriggerElement = null;
     let isDrawing = false;
@@ -1253,9 +1254,35 @@
       }
     }
 
+    // Trims the transparent margin so the signature/initials fill the field instead of shrinking with the big drawing pad.
+    function inkDataUrl() {
+      const w = canvas.width, h = canvas.height;
+      const data = ctx.getImageData(0, 0, w, h).data;
+      let minX = w, minY = h, maxX = -1, maxY = -1;
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          if (data[(y * w + x) * 4 + 3] > 8) {
+            if (x < minX) minX = x;
+            if (x > maxX) maxX = x;
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
+          }
+        }
+      }
+      if (maxX < 0) return canvas.toDataURL('image/png');
+      const pad = Math.round(6 * (window.devicePixelRatio || 1));
+      minX = Math.max(0, minX - pad); minY = Math.max(0, minY - pad);
+      maxX = Math.min(w - 1, maxX + pad); maxY = Math.min(h - 1, maxY + pad);
+      const out = document.createElement('canvas');
+      out.width = maxX - minX + 1;
+      out.height = maxY - minY + 1;
+      out.getContext('2d').drawImage(canvas, minX, minY, out.width, out.height, 0, 0, out.width, out.height);
+      return out.toDataURL('image/png');
+    }
+
     function saveSignature() {
       if (!activeTriggerElement) return;
-      setPadImage(activeTriggerElement, hasInk() ? canvas.toDataURL('image/png') : null);
+      setPadImage(activeTriggerElement, hasInk() ? inkDataUrl() : null);
       closeSignatureModal();
       applyGate();
       changed();
@@ -1594,6 +1621,35 @@
 
     /* ---------- PDF export and print ---------- */
 
+    // jsPDF writes a bare signature widget; give it a page reference, a visible box and a tooltip so Acrobat treats it as a normal signable field.
+    async function prepareSignatureField(bytes, fieldName) {
+      if (!window.PDFLib) return bytes;
+      const { PDFDocument, PDFName, PDFString, PDFDict, PDFArray, PDFNumber } = window.PDFLib;
+      const doc = await PDFDocument.load(bytes);
+      const ctx = doc.context;
+      for (const page of doc.getPages()) {
+        const annots = page.node.Annots();
+        if (!annots) continue;
+        for (let i = 0; i < annots.size(); i++) {
+          const dict = annots.lookup(i, PDFDict);
+          const t = dict.get(PDFName.of('T'));
+          if (!t || t.decodeText() !== fieldName) continue;
+          const rect = dict.lookup(PDFName.of('Rect'), PDFArray);
+          const w = rect.lookup(2, PDFNumber).asNumber() - rect.lookup(0, PDFNumber).asNumber();
+          const h = rect.lookup(3, PDFNumber).asNumber() - rect.lookup(1, PDFNumber).asNumber();
+          const look = ctx.stream(`0.93 0.96 1 rg 0 0 ${w} ${h} re f 0 0.2 0.6 RG 0.75 w 0.4 0.4 ${w - 0.8} ${h - 0.8} re S`, {
+            Type: 'XObject', Subtype: 'Form', BBox: [0, 0, w, h]
+          });
+          dict.set(PDFName.of('P'), page.ref);
+          dict.set(PDFName.of('TU'), PDFString.of('Item 10.d - Approving Official Signature/Rank'));
+          dict.set(PDFName.of('F'), PDFNumber.of(4));
+          dict.set(PDFName.of('MK'), ctx.obj({ BC: [0, 0.2, 0.6], BG: [0.93, 0.96, 1] }));
+          dict.set(PDFName.of('AP'), ctx.obj({ N: ctx.register(look) }));
+        }
+      }
+      return await doc.save({ useObjectStreams: false });
+    }
+
     async function exportPdf() {
       if (!window.html2canvas || !window.jspdf) {
         alert('The PDF libraries could not be loaded (they need an internet connection). Use Print and choose "Save as PDF" instead.');
@@ -1604,6 +1660,8 @@
       try {
         const el = document.querySelector('.page-container');
         // Render in a fixed desktop-width window so phones don't capture the narrow mobile layout.
+        // Item 10 a-c stay fillable (text hidden in the screenshot, re-added as PDF form fields); 10.d becomes an empty signature field.
+        const fillable = [];
         const shot = await html2canvas(el, {
           scale: 2,
           backgroundColor: '#ffffff',
@@ -1613,6 +1671,26 @@
             clone.style.width = '850px';
             clone.style.maxWidth = '850px';
             clone.style.boxShadow = 'none';
+            const base = clone.getBoundingClientRect();
+            [['field10a', 'Item10a_Name'], ['field10b', 'Item10b_Title'], ['field10c', 'Item10c_DateSigned']].forEach(([id, name]) => {
+              const input = doc.getElementById(id);
+              const r = input.getBoundingClientRect();
+              fillable.push({
+                name, value: document.getElementById(id).value, maxLength: input.maxLength > 0 ? input.maxLength : 0,
+                x: r.left - base.left, y: r.top - base.top, w: r.width, h: r.height
+              });
+              input.style.color = 'transparent';
+              input.style.webkitTextFillColor = 'transparent';
+            });
+            // Item 10.d: drop the drawn signature from the screenshot and leave an empty signature field instead.
+            const sigBox = doc.querySelector('[data-pad-id="sig_10d"]');
+            const sr = sigBox.getBoundingClientRect();
+            fillable.push({
+              name: 'Item10d_Signature', signature: true,
+              x: sr.left - base.left, y: sr.top - base.top, w: sr.width, h: sr.height
+            });
+            sigBox.querySelectorAll('img').forEach((img) => { img.style.visibility = 'hidden'; });
+            fillable.cssWidth = base.width;
           }
         });
         const pdf = new window.jspdf.jsPDF({ unit: 'pt', format: 'letter' });
@@ -1630,7 +1708,32 @@
           if (page > 0) pdf.addPage();
           pdf.addImage(part.toDataURL('image/png'), 'PNG', margin, margin, shot.width * ratio, h * ratio);
         }
-        pdf.save(`DD2983_${todayStamp()}.pdf`);
+        const sc = shot.width / (fillable.cssWidth || 850);   // css px -> canvas px
+        fillable.forEach((f) => {
+          const top = f.y * sc;
+          const page = Math.floor(top / sliceH);
+          const yOnPage = top - page * sliceH;
+          const field = new window.jspdf.jsPDF.AcroForm.TextField();
+          field.fieldName = f.name;
+          if (f.signature) {
+            field.FT = '/Sig';   // digital signature field, left unsigned
+          } else {
+            field.value = f.value;
+            field.fontSize = 9;
+            if (f.maxLength) field.maxLength = f.maxLength;
+          }
+          field.Rect = [
+            margin + f.x * sc * ratio,
+            margin + yOnPage * ratio,
+            f.w * sc * ratio,
+            Math.min(f.h * sc * ratio, ph - yOnPage * ratio)
+          ];
+          pdf.setPage(page + 1);
+          pdf.addField(field);
+        });
+        let bytes = pdf.output('arraybuffer');
+        try { bytes = await prepareSignatureField(bytes, 'Item10d_Signature'); } catch (e) { /* keep the plain jsPDF output */ }
+        downloadBlob(new Blob([bytes], { type: 'application/pdf' }), `DD2983_${todayStamp()}.pdf`);
       } catch (e) {
         alert('PDF export failed: ' + e.message);
       } finally {
